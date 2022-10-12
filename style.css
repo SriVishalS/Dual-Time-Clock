@@ -1,0 +1,110 @@
+* {
+  font-family: 'Teko', sans-serif !important;
+  letter-spacing: 3px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  margin: 48px;
+  padding: 1.5rem;
+  border: 6px solid #282828;
+  border-radius: 50%;
+  box-shadow: -8px -8px 12px rgba(67, 67, 67, 0.4),
+    inset 8px 8px 12px rgba(0, 0, 0, 0.3),
+    inset -8px -8px 12px rgba(67, 67, 67, 0.4), 8px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.outer-clock {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: #282828;
+}
+
+.outer-clock::before,
+.outer-clock::after,
+.outer-clock .marking {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: #bdbdcb;
+  z-index: 0;
+  left: 49%;
+}
+
+.outer-clock::after {
+  transform: rotate(90deg);
+}
+
+.outer-clock .marking {
+  width: 2px;
+}
+
+.outer-clock .marking.marking-one {
+  transform: rotate(30deg);
+}
+
+.outer-clock .marking.marking-two {
+  transform: rotate(60deg);
+}
+
+.outer-clock .marking.marking-three {
+  transform: rotate(120deg);
+}
+
+.outer-clock .marking.marking-four {
+  transform: rotate(150deg);
+}
+
+.outer-clock .marking-seconds {
+  background-color: transparent;
+  z-index: 1;
+}
+
+.outer-clock .marking-seconds::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 32px;
+  top: -2px;
+  left: -2px;
+  background-color: #3bd9d9;
+}
+
+.inner-clock {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background-color: #282828;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.inner-clock .clock-time {
+  position: absolute;
+  top: 40%;
+  left: 9.5%;
+  width: 92%;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
